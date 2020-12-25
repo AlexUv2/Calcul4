@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Довідка</title>
+    <link rel="shortcut icon" href="/static/images/powerPlant.png" type="image/png">
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"> <a href="main.html" style="color: black">Кіровоградська ТЕЦ</a></h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="main.html">Головна</a>
+    <a class="p-2 text-dark" href="reference.html">Довідка</a>
+  </nav>
+      <a class="btn btn-warning" href="calculation.html">Розрахувати</a>
+</div>
+
+<div class="container pt-4 my-md-5 pt-md-5 border-top" >
+
+<div class="container mt-5">
+    <div>
+        <p class="h2">Довідка:</p>
+        <ul style=" list-style-type: none; line-height: 2.7">
+          <li>k - показник емісії, г/ГДж.</li>
+          <li>Q<sup>r</sup><sub>i</sub> - нижча робоча теплота згоряння палива, МДж/кг.</li>
+          <li>B<sub>i</sub> - витрати палива за проміжок часу.</li>
+          <li>A<sup>r</sup> - масовий вміст золи в паливі на робочу масу, %.</li>
+          <li>a<sub>вин</sub> - частка золи, яка виходить з котла у вигляді леткої золи.</li>
+          <li>n<sub>зу</sub> - ефективність золоуловлюваної установки.</li>
+          <li>Г<sub>вин</sub> - масовий вміст горючих речовин у викидах твердих частинок, %.</li>
+          <li>k<sub>твS</sub> - показник емісії твердих продуктів взаємодії сорбенту та оксидів сірки і твердих
+частинок сорбенту, г/ГДж.</li>
+          <li style="font-style: italic;">B - коефіцієнт роботи очисної установки</li>
+          <li>n<sub>I</sub> - ефективність первинних заходів</li>
+          <li>n<sub>II</sub> - ефективність вторинних заходів</li>
+          <li>S<sup>r</sup> - вміст сірки в паливі на робочу масу за проміжок часу.</li>
+          <li style="font-style: italic; ">f<sub>н</sub> - ступінь зменшення викиду NOx під час роботи на низькому навантаженні.</li>
+          <li>c<sub>вм</sub> - масовий вміст важкого металу у паливі, мг/кг.</li>
+          <li style="font-style: italic; ">f<sub>зб</sub> - коефіцієнт збагачення важкого металу.</li>
+          <li>n<sub>гзу</sub> - ефективність уловлення газоподібної фракції важкого металу в золоуловлювальній установці.</li>
+          <li style="font-style: italic; ">f<sub>г</sub> - частка важкого металу, яка виходить у газоподібній формі.</li>
+          <li> C<sup>r</sup> - масовий вміст вуглецю в паливі на робочу масу, %.</li>
+          <li>e<sub>c</sub> - ступінь окислення вуглецю палива.</li>
+            </ul>
+    </div>
+</div>
+</div>
+
+
+<footer class="container pt-4 my-md-5 pt-md-5 border-top" style=" height: 80px;  margin-top: -80px;">
+    <div class="col-12 col-md">
+        <img class="mb-2" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+
+        <div class="col-6 col-md">
+        <h5>Creators</h5>
+        <ul class="list-unstyled text-small">
+          <li class="text-muted">Alex Uvarovskii</li>
+          <li class="text-muted">Max Zastupailo</li>
+        </ul>
+      </div>
+<div class="col-12 col-md">
+
+        <small class="d-block mb-3 text-muted">©2020</small>
+      </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

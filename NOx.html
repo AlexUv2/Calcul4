@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NOx</title>
+    <link rel="shortcut icon" href="img/powerPlant.png" type="image/png">
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"> <a href="home" style="color: black">Кіровоградська ТЕЦ</a></h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="/home">Головна</a>
+    <a class="p-2 text-dark" href="/reference">Довідка</a>
+  </nav>
+      <a class="btn btn-warning" href="/calculation">Розрахувати</a>
+</div>
+
+<div class="container pt-4 my-md-5 pt-md-5 border-top" >
+
+ <h3>
+      Ви знаходитесь на сторінці для обчислення викидів NOx ( оксиди азоту )
+    </h3>
+    <br>
+
+    <img src="files/knox.png" width="300px" height="60px" alt="">
+
+     <p>Введіть B<sub>i</sub> - витрати палива за проміжок часу = <input style="border-radius: 5px" id="B" placeholder="Введіть число" /> </p>
+
+    <p>Введіть <span style="font-style: italic;">B</span> - коефіцієнт роботи очисної установки = <input style="border-radius: 5px" id="Beta" placeholder="Введіть число" /> </p>
+
+    <p>Введіть Q<sup>r</sup><sub>i</sub> - нижча робоча теплота згоряння палива, МДж/кг = <input style="border-radius: 5px" id="Q" placeholder="Введіть число" /> </p>
+
+    <p>Введіть k<sub>NOx0</sub> - показник емісії, г/ГДж = <input style="border-radius: 5px" id="knox" placeholder="Введіть число" /> </p>
+
+    <p>Введіть f<sub>н</sub> - ступінь зменшення викиду NOx під час роботи на низькому навантаженні = <input style="border-radius: 5px" id="fn" placeholder="Введіть число" /> </p>
+
+    <p>Введіть n<sub>I</sub> - ефективність первинних заходів (Не більше одиниці!) = <input style="border-radius: 5px" id="n1" placeholder="Введіть число" /> </p>
+
+    <p>Введіть n<sub>II</sub> - ефективність вторинних заходів (Не більше одиниці!) = <input style="border-radius: 5px" id="n2" placeholder="Введіть число" /> </p>
+
+     <button class="btn btn-primary" onclick="func()">Обчислити</button>
+<p></p>
+
+     <p>Валовий викид:</p>
+      <p id="result" title="Result"></p>
+
+
+ <script>
+    function func(){
+
+          var Beta = Number(document.getElementById("Beta").value);
+          var B = Number(document.getElementById("B").value);
+          var Q = Number(document.getElementById("Q").value);
+          var fn = Number(document.getElementById("fn").value);
+          var n1 = Number(document.getElementById("n1").value);
+          var n2 = Number(document.getElementById("n2").value);
+          var knox = Number(document.getElementById("knox").value);
+
+          var result = (1/1000000) * ( knox * fn * (1 - n1)*(1 - n2 * Beta) ) * Q * B;
+
+          document.getElementById("result").innerHTML = result;
+          }
+
+ </script>
+
+
+
+</div>
+
+
+<footer class="container pt-4 my-md-5 pt-md-5 border-top" style=" height: 80px;  margin-top: -80px;">
+    <div class="col-12 col-md">
+        <img class="mb-2" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+
+        <div class="col-6 col-md">
+        <h5>Creators</h5>
+        <ul class="list-unstyled text-small">
+          <li class="text-muted">Alex Uvarovskii</li>
+          <li class="text-muted">Max Zastupailo</li>
+        </ul>
+      </div>
+<div class="col-12 col-md">
+
+        <small class="d-block mb-3 text-muted">©2020</small>
+      </div>
+    </div>
+</footer>
+
+
+

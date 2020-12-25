@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Тверді частинки</title>
+    <link rel="shortcut icon" href="img/powerPlant.png" type="image/png">
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"> <a href="home" style="color: black">Кіровоградська ТЕЦ</a></h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="/home">Головна</a>
+    <a class="p-2 text-dark" href="/reference">Довідка</a>
+  </nav>
+      <a class="btn btn-warning" href="/calculation">Розрахувати</a>
+</div>
+
+<div class="container pt-4 my-md-5 pt-md-5 border-top" >
+
+  <h3>Ви знаходитесь на сторінці для обчислення викидів Твердих частинок</h3>
+
+
+
+<div>
+        <p>Введіть B<sub>i</sub> - витрати палива за проміжок часу = <input style="border-radius: 5px" type="number" id="B" placeholder="Введіть B" /> </p>
+
+        <p>Введіть Q<sup>r</sup><sub>i</sub> - нижча робоча теплота згоряння палива, МДж/кг = <input style="border-radius:  5px" id="Q" placeholder="Введіть Q" /> </p>
+
+        <p>Введіть k<sub>твS</sub> - показник емісії твердих продуктів взаємодії сорбенту та оксидів сірки і твердих
+    частинок сорбенту, г/ГДж = <input style="border-radius: 5px" id="ktvS" placeholder="Введіть k" /> </p>
+
+        <p>Введіть a<sub>вин</sub> - частка золи, яка виходить з котла у вигляді леткої золи = <input style="border-radius: 5px" id="avin" placeholder="Введіть aвин" /> </p>
+
+        <p>Введіть A<sup>r</sup> - масовий вміст золи в паливі на робочу масу, % = <input style="border-radius: 5px" id="Ar" placeholder="Введіть Ar" /> </p>
+
+        <p>Введіть n<sub>зу</sub> - ефективність золоуловлюваної установки ( Не Більше Одиниці! ) = <input style="border-radius: 5px" id="Nzu" placeholder="Введіть nзу" /> </p>
+
+        <p>Введіть Г<sub>вин</sub> - масовий вміст горючих речовин у викидах твердих частинок, % = <input style="border-radius: 5px" id="Gvin" placeholder="Введіть Гвин" /> </p>
+
+         <button type="button" class="btn btn-primary" onclick="func()">Обчислити</button>
+        <p></p>
+
+         <p><br>Валовий викид:</p>
+
+          <p id="result" title="Result"></p>
+
+</div>
+     <script>
+        function func(){
+
+              var Q = Number(document.getElementById("Q").value);
+              var B = Number(document.getElementById("B").value);
+              var avin = Number(document.getElementById("avin").value);
+              var Ar = Number(document.getElementById("Ar").value);
+              var Nzu = Number(document.getElementById("Nzu").value);
+              var ktvS = Number(document.getElementById("ktvS").value);
+              var Gvin = Number(document.getElementById("Gvin").value);
+
+              var result = (1/1000000) * ( (1000000/Q) * avin * (Ar/(100-Gvin)) * (1 - Nzu) + ktvS ) * Q * B;
+
+              document.getElementById("result").innerHTML = result;
+              }
+
+     </script>
+      <br>
+
+
+
+
+
+</div>
+
+
+<footer class="container pt-4 my-md-5 pt-md-5 border-top" style=" height: 80px;  margin-top: -80px;">
+    <div class="col-12 col-md">
+        <img class="mb-2" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+
+        <div class="col-6 col-md">
+        <h5>Creators</h5>
+        <ul class="list-unstyled text-small">
+          <li class="text-muted">Alex Uvarovskii</li>
+          <li class="text-muted">Max Zastupailo</li>
+        </ul>
+      </div>
+<div class="col-12 col-md">
+
+        <small class="d-block mb-3 text-muted">©2020</small>
+      </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
+
+
+

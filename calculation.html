@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Розрахунки</title>
+    <link rel="shortcut icon" href="img/powerPlant.png" type="image/png">
+</head>
+
+<body>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"> <a href="main.html" style="color: black">Кіровоградська ТЕЦ</a></h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="main.html">Головна</a>
+    <a class="p-2 text-dark" href="reference.html">Довідка</a>
+  </nav>
+      <a class="btn btn-warning" href="calculation.html">Розрахувати</a>
+</div>
+
+<div class="container pt-4 my-md-5 pt-md-5 border-top" >
+
+<div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Тверді Частинки</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>А<sup>r</sup></li>
+            <li>k<sub>твS</sub></li>
+            <li>B<sup>i</sup></li>
+            <li>n<sup>зу</sup></li>
+            <li>Г<sup>вин</sup></li>
+            <li>а<sup>вин</sup></li>
+            <br>
+        </ul>
+        <a href="heavy-parts.html"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">SO<sub>2</sub></h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>B<sup>i</sup></li>
+            <li>S<sup>r</sup></li>
+            <li>n<sup>|</sup></li>
+            <li>n<sup>||</sup></li>
+            <li>B</li>
+            <br>
+            <br>
+        </ul>
+          <a href="SO2.html"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">NO<sub>x</sub></h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>B<sup>i</sup></li>
+            <li>B</li>
+            <li>n<sup>|</sup></li>
+            <li>n<sup>||</sup></li>
+            <li>B</li>
+            <li>f<sub>н</sub></li>
+            <li>k<sub>NO<sub>x</sub></sub></li>
+        </ul>
+          <a href="NOx.html"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">CO</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <br>
+            <br>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>k<sub>ij</sub></li>
+            <li>B<sup>i</sup></li>
+            <br>
+            <li>Значення емісії з таблиці</li>
+            <br>
+        </ul>
+        <a href="CO.html"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">CO<sub>2</sub></h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <br>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>B<sup>i</sup></li>
+            <li>e<sup>c</sup></li>
+            <li>C<sub>r</sub></li>
+            <li>e<sub>c</sub></li>
+            <li>k<sup>CO</sup><sub>2</sub></li>
+            <br>
+        </ul>
+          <a href="CO2.html"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">N<sub>2</sub>O</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+             <br>
+            <br>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>k<sub>ij</sub></li>
+            <li>B<sup>i</sup></li>
+            <br>
+            <li>Значення емісії з таблиці</li>
+            <br>
+        </ul>
+          <a href="/N2O.html"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<footer class="container pt-4 my-md-5 pt-md-5 border-top" style=" height: 80px;  margin-top: -80px;">
+    <div class="col-12 col-md">
+        <img class="mb-2" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+
+        <div class="col-6 col-md">
+        <h5>Creators</h5>
+        <ul class="list-unstyled text-small">
+          <li class="text-muted">Alex Uvarovskii</li>
+          <li class="text-muted">Max Zastupailo</li>
+        </ul>
+      </div>
+<div class="col-12 col-md">
+
+        <small class="d-block mb-3 text-muted">©2020</small>
+      </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
